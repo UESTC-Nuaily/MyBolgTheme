@@ -1,27 +1,24 @@
-{{!
-< default}} {{#post}} <article class="post-container post-container--single">
+{{!< default}}
 
-  <header class="post-header">
-    <div class="post-meta">
-      <time datetime="{{date format=" DD MMM YYYY "}}" class="post-meta__date date">{{date format="DD MMM YYYY"}}</time> &#8226; <span class="post-meta__tags tags">{{tags prefix="于 "}}</span>
-      <!--<span class="post-meta__author author"><img src="{{author.image}}" alt="profile image for {{author.name}}" class="avatar post-meta__avatar" /> by {{author.name}}</span>-->
-    </div>
-    <h1 class="post-title">{{{title}}}</h1>
-  </header>
+{{#post}}
 
-  <section class="{{post_class}}">
-    {{content}}
-  </section>
-  <!--PC版-->
-  <div id="SOHUCS" sid="{{{title}}}"></div>
-  <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js"></script>
-  <script type="text/javascript">
-    window.changyan.api.config({
-      appid: 'cysWHvgUa',
-      conf: 'prod_36fb22dade945dc52f7c0850dfde1d19'
-    });
+  <article class="post-container post-container--single">
 
-  </script>
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="{{date format="DD MMM YYYY"}}" class="post-meta__date date">{{date format="DD MMM YYYY"}}</time> &#8226; <span class="post-meta__tags tags">{{tags prefix="于 "}}</span>
+        <!--<span class="post-meta__author author"><img src="{{author.image}}" alt="profile image for {{author.name}}" class="avatar post-meta__avatar" /> by {{author.name}}</span>-->
+      </div>
+      <h1 class="post-title">{{{title}}}</h1>
+    </header>
+
+    <section class="{{post_class}}">
+      {{content}}
+    </section>
+
   </article>
+  
+  {{> read-more}}
+  {{!-- {{> comments}} --}}
 
-  {{> read-more}} {{!-- {{> comments}} --}} {{/post}}
+{{/post}}
